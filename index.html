@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNITK - Premium Resale Properties in Egypt</title>
+    <meta name="description" content="Discover premium resale properties across Egypt. Apartments, villas, penthouses and more.">
+    
+    <!-- Google Fonts: Inter for English, Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+/* ========================================
+   UNITK - Premium Resale Properties
+   Complete Stylesheet
+   ======================================== */
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --emerald-300: #6ee7b7;
+    --emerald-400: #34d399;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --emerald-800: #065f46;
+    --emerald-900: #064e3b;
+    --emerald-950: #022c22;
+
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    --white: #ffffff;
+    --black: #000000;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--gray-900);
+    background: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- RTL (ARABIC) SUPPORT ---------- */
+html[dir="rtl"] body {
+    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+html[dir="rtl"] .search-field input { padding-left: 1rem; padding-right: 2.5rem; }
+html[dir="rtl"] .search-field-icon { left: auto; right: 0.875rem; }
+html[dir="rtl"] .search-bar-input input { padding-left: 1rem; padding-right: 2.5rem; }
+html[dir="rtl"] .search-bar-input svg { left: auto; right: 0.875rem; }
+html[dir="rtl"] .property-type-badge { left: auto; right: 0.75rem; }
+html[dir="rtl"] .property-card-price { left: auto; right: 0.75rem; }
+html[dir="rtl"] .detail-main-img .property-type-badge { left: auto; right: 0.75rem; }
+html[dir="rtl"] .detail-main-img .detail-img-price { left: auto; right: 1rem; }
+html[dir="rtl"] .mobile-menu { right: auto; left: -280px; }
+html[dir="rtl"] .mobile-menu.open { left: 0; }
+html[dir="rtl"] .btn svg { transform: scaleX(-1); }
+html[dir="rtl"] .breadcrumb svg, html[dir="rtl"] .detail-back svg { transform: scaleX(-1); }
+html[dir="rtl"] .feature-card-icon svg { transform: scaleX(-1); }
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.text-emerald { color: var(--emerald-700); }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    background: var(--emerald-700);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.logo-accent { color: var(--emerald-700); }
+
+.nav-links { display: flex; align-items: center; gap: 0.25rem; }
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+.nav-link:hover { color: var(--gray-900); background: var(--gray-100); }
+.nav-link.active { color: var(--white); background: var(--emerald-700); }
+
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.btn-lang {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: none;
+    border: 1px solid var(--gray-300);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.btn-lang:hover { background: var(--gray-100); }
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--emerald-700);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+.contact-btn:hover { background: var(--emerald-800); }
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--gray-700);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px; 
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    z-index: 200;
+    box-shadow: var(--shadow-xl);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.open { right: 0; }
+.mobile-menu-inner { display: flex; flex-direction: column; padding: 1rem; }
+.mobile-link {
+    display: flex; align-items: center; gap: 0.75rem; padding: 1rem;
+    font-size: 0.9375rem; font-weight: 500; color: var(--gray-700);
+    border-radius: var(--radius); transition: all 0.2s;
+}
+.mobile-link:hover { background: var(--gray-100); color: var(--gray-900); }
+.mobile-link-highlight { color: var(--emerald-700); background: var(--emerald-50); }
+.mobile-divider { height: 1px; background: var(--gray-200); margin: 0.5rem 1rem; }
+
+/* ---------- HERO SECTION ---------- */
+.hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%); }
+.hero-content { position: relative; z-index: 10; text-align: center; padding: 3rem 0; }
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(4,120,87,0.9); backdrop-filter: blur(8px);
+    color: var(--white); padding: 0.375rem 1rem; border-radius: 999px;
+    font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem;
+}
+.hero-title { font-size: clamp(2.25rem, 6vw, 4.5rem); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6; }
+
+/* ---------- SEARCH BOX ---------- */
+.hero-search { max-width: 800px; margin: 0 auto; background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); padding: 1rem; }
+.search-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+.search-field { position: relative; }
+.search-field-icon { position: absolute; top: 50%; transform: translateY(-50%); color: var(--gray-400); left: 0.875rem; }
+.search-field input, .search-field select {
+    width: 100%; height: 48px; padding: 0 1rem; font-size: 0.875rem; font-family: inherit;
+    border: none; background: var(--gray-100); border-radius: var(--radius);
+    color: var(--gray-900); outline: none; transition: all 0.2s;
+    appearance: none; -webkit-appearance: none;
+}
+.search-field input:focus, .search-field select:focus { background: var(--white); box-shadow: 0 0 0 2px rgba(4,120,87,0.2); }
+.search-field input { padding-left: 2.5rem; }
+
+/* ---------- BUTTONS ---------- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.625rem 1.5rem; font-size: 0.875rem; font-weight: 600; font-family: inherit;
+    border: none; border-radius: var(--radius); cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.btn-primary { background: var(--emerald-700); color: var(--white); }
+.btn-primary:hover { background: var(--emerald-800); }
+.btn-outline { background: var(--white); color: var(--gray-700); border: 1px solid var(--gray-300); }
+.btn-outline:hover { background: var(--gray-50); }
+.btn-white { background: var(--white); color: var(--emerald-800); }
+.btn-white:hover { background: var(--emerald-50); }
+.btn-outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.1); }
+.btn-full { width: 100%; }
+.btn-link { background: none; border: none; font-size: 0.8125rem; color: var(--gray-500); cursor: pointer; font-family: inherit; }
+.btn-link:hover { color: var(--gray-700); }
+
+/* ---------- HERO STATS ---------- */
+.hero-stats { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-number { font-size: 1.75rem; font-weight: 700; color: var(--white); }
+.stat-label { font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem; }
+.stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.2); }
+
+/* ---------- SECTIONS & GRID ---------- */
+.section { padding: 4rem 0; }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem; }
+.section-header-center { text-align: center; margin-bottom: 2.5rem; }
+.section-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.section-subtitle { font-size: 0.9375rem; color: var(--gray-500); max-width: 475px; }
+.section-header-center .section-subtitle { margin: 0.5rem auto 0; }
+.property-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+/* ---------- PROPERTY CARD ---------- */
+.property-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: all 0.3s ease; }
+.property-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+.property-card:hover .property-card-title { color: var(--emerald-700); }
+.property-card-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.property-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.property-card:hover .property-card-img img { transform: scale(1.05); }
+.property-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
+.property-type-badge { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; color: var(--white); }
+.badge-apartment { background: var(--emerald-700); } .badge-villa { background: #b45309; } .badge-penthouse { background: #7e22ce; } .badge-studio { background: #0369a1; } .badge-duplex { background: #be123c; } .badge-commercial { background: #334155; } .badge-chalet { background: #0e7490; } .badge-land { background: #65a30d; }
+.property-card-price { position: absolute; bottom: 0.75rem; left: 0.75rem; color: var(--white); font-size: 1.125rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.property-card-body { padding: 1rem; }
+.property-card-title { font-size: 0.9375rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s; }
+.property-card-location { display: flex; align-items: center; gap: 0.375rem; font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 0.75rem; }
+.property-card-features { display: flex; align-items: center; gap: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200); font-size: 0.75rem; color: var(--gray-500); }
+.property-card-features div { display: flex; align-items: center; gap: 0.25rem; }
+.property-card-btn { display: flex; align-items: center; justify-content: center; gap: 0.375rem; width: 100%; padding: 0.625rem; margin-top: 0.75rem; font-size: 0.8125rem; font-weight: 500; color: var(--emerald-700); background: var(--white); border: 1px solid rgba(4,120,87,0.3); border-radius: var(--radius); cursor: pointer; font-family: inherit; transition: all 0.2s; }
+.property-card-btn:hover { background: var(--emerald-700); color: var(--white); border-color: var(--emerald-700); }
+
+/* ---------- CTA SECTION ---------- */
+.cta-section { background: var(--emerald-950); padding: 5rem 0; }
+.cta-content { text-align: center; }
+.cta-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(4,120,87,0.4); color: var(--emerald-200); padding: 0.375rem 1rem; border-radius: 999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem; }
+.cta-title { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 700; color: var(--white); max-width: 550px; margin: 0 auto 1rem; line-height: 1.2; }
+.cta-text { font-size: 1rem; color: var(--emerald-300); max-width: 480px; margin: 0 auto 2rem; line-height: 1.6; }
+.cta-buttons { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+
+/* ---------- SEARCH PAGE ---------- */
+.page-padding { padding-top: 2rem; padding-bottom: 4rem; }
+.breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+.breadcrumb a:hover { color: var(--gray-900); }
+.breadcrumb-sep { color: var(--gray-300); }
+.breadcrumb-current { color: var(--gray-900); }
+.page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.375rem; }
+.page-desc { font-size: 0.9375rem; color: var(--gray-500); margin-bottom: 2rem; }
+
+.search-page-controls { margin-bottom: 1.5rem; }
+.search-bar-row { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.search-bar-input { position: relative; flex: 1; }
+.search-bar-input svg { position: absolute; top: 50%; transform: translateY(-50%); color: var(--gray-400); left: 0.875rem; }
+.search-bar-input input { width: 100%; height: 44px; padding: 0 1rem 0 2.5rem; font-size: 0.875rem; font-family: inherit; border: 1px solid var(--gray-300); border-radius: var(--radius); outline: none; transition: all 0.2s; }
+.search-bar-input input:focus { border-color: var(--emerald-700); box-shadow: 0 0 0 3px rgba(4,120,87,0.1); }
+.filter-count { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 4px; background: var(--emerald-700); color: var(--white); border-radius: 999px; font-size: 0.6875rem; font-weight: 600; }
+
+.filter-panel { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 1.25rem; margin-bottom: 1rem; animation: slideDown 0.2s ease; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.filter-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filter-header h3 { font-size: 0.875rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.filter-group { display: flex; flex-direction: column; gap: 0.375rem; }
+.filter-group label { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); }
+.filter-group select, .filter-group input { height: 40px; padding: 0 0.75rem; font-size: 0.8125rem; font-family: inherit; border: 1px solid var(--gray-300); border-radius: var(--radius); outline: none; appearance: none; -webkit-appearance: none; transition: all 0.2s; }
+.filter-group select:focus, .filter-group input:focus { border-color: var(--emerald-700); box-shadow: 0 0 0 3px rgba(4,120,87,0.1); }
+.filter-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.75rem; margin-top: 0.75rem; border-top: 1px solid var(--gray-200); }
+.filter-tag { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.625rem; background: var(--gray-100); border-radius: 999px; font-size: 0.75rem; font-weight: 500; color: var(--gray-700); }
+.filter-tag button { display: flex; align-items: center; background: none; border: none; color: var(--gray-400); cursor: pointer; padding: 0; }
+.filter-tag button:hover { color: var(--gray-700); }
+
+.results-count { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+.no-results { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 1rem; gap: 1rem; }
+.no-results-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; color: var(--gray-400); }
+.no-results h3 { font-size: 1.125rem; font-weight: 600; }
+.no-results p { font-size: 0.875rem; color: var(--gray-500); max-width: 400px; }
+
+/* ---------- PROPERTY DETAIL ---------- */
+.detail-back { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: var(--gray-500); cursor: pointer; background: none; border: none; font-family: inherit; transition: color 0.2s; margin-bottom: 1rem; }
+.detail-back:hover { color: var(--gray-900); }
+.detail-gallery { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem; }
+.detail-main-img { position: relative; aspect-ratio: 16/10; border-radius: var(--radius-xl); overflow: hidden; }
+.detail-main-img img { width: 100%; height: 100%; object-fit: cover; }
+.detail-main-img .property-type-badge { top: 0.75rem; left: 0.75rem; }
+.detail-main-img .detail-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%); }
+.detail-main-img .detail-img-price { position: absolute; bottom: 1rem; left: 1rem; color: var(--white); font-size: 1.5rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+/* ===== Thumbnail strip ===== */
+.detail-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2px;
+  padding-bottom: 0.6rem;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #8f8f8f #dcdcdc;
+}
+
+/* Chrome / Safari / Edge scrollbar */
+.detail-thumbnails::-webkit-scrollbar {
+  height: 8px;
+}
+.detail-thumbnails::-webkit-scrollbar-track {
+  background: #dcdcdc;
+  border-radius: 999px;
+}
+.detail-thumbnails::-webkit-scrollbar-thumb {
+  background: #8f8f8f;
+  border-radius: 999px;
+}
+.detail-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #6b6b6b;
+}
+
+/* ===== Thumbnails ===== */
+.detail-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+.detail-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.detail-thumb:hover {
+  opacity: 1;
+}
+.detail-thumb.active {
+  border-color: var(--emerald-700);
+  opacity: 1;
+}
+
+/* ===== Arrow buttons ===== */
+.thumb-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  padding: 0 0.25rem;
+  flex-shrink: 0;
+}
+.thumb-nav:hover {
+  color: #000;
+}
+
+.detail-content { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.detail-info h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.detail-location { display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+.detail-features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
+.feature-card { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); }
+.feature-card-icon { width: 40px; height: 40px; border-radius: 0.5rem; background: var(--emerald-50); color: var(--emerald-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.feature-card-label { font-size: 0.75rem; color: var(--gray-500); }
+.feature-card-value { font-size: 0.875rem; font-weight: 600; }
+.detail-description { margin-bottom: 2rem; }
+.detail-description h2 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; }
+.detail-description p { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.7; }
+.detail-table { background: var(--gray-50); border-radius: var(--radius-xl); overflow: hidden; }
+.detail-row { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); }
+.detail-row:last-child { border-bottom: none; }
+.detail-row-label { font-size: 0.875rem; color: var(--gray-500); }
+.detail-row-value { font-size: 0.875rem; font-weight: 500; }
+
+.detail-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+.detail-price-card { background: var(--emerald-700); color: var(--white); border-radius: var(--radius-xl); padding: 1.5rem; }
+.detail-price-label { font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.25rem; }
+.detail-price-value { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+.detail-price-sub { font-size: 0.875rem; opacity: 0.75; }
+.detail-price-actions { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--emerald-600); display: flex; flex-direction: column; gap: 0.75rem; }
+.detail-price-actions .btn { height: 48px; font-weight: 600; }
+.detail-agent-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 1.25rem; }
+.detail-agent-card h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+.detail-agent-card p { font-size: 0.8125rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 1rem; }
+
+/* ---------- ABOUT PAGE ---------- */
+.about-hero { text-align: center; padding: 3rem 0; }
+.about-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald-50); color: var(--emerald-700); padding: 0.375rem 1rem; border-radius: 999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem; }
+.about-title { font-size: clamp(1.5rem, 4vw, 2.75rem); font-weight: 700; max-width: 700px; margin: 0 auto 1rem; line-height: 1.2; letter-spacing: -0.02em; }
+.about-subtitle { font-size: 1.0625rem; color: var(--gray-500); max-width: 550px; margin: 0 auto; line-height: 1.7; }
+.values-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.value-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem; transition: box-shadow 0.3s; }
+.value-card:hover { box-shadow: var(--shadow-lg); }
+.value-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--emerald-50); color: var(--emerald-700); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
+.value-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.value-card p { font-size: 0.875rem; color: var(--gray-500); line-height: 1.6; }
+.story-section { background: var(--gray-50); border-radius: var(--radius-xl); padding: 3rem; margin: 2rem 0; }
+.story-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+.story-content h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+.story-content p { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 1rem; }
+.story-image { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4/3; }
+.story-image img { width: 100%; height: 100%; object-fit: cover; }
+.about-cta { text-align: center; padding: 3rem 0; }
+.about-cta h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; }
+.about-cta p { font-size: 0.9375rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+
+/* ---------- FOOTER ---------- */
+.footer { background: var(--emerald-950); color: var(--emerald-100); margin-top: auto; }
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+.footer-col .logo { margin-bottom: 1rem; }
+.footer-about { font-size: 0.875rem; color: var(--emerald-300); line-height: 1.6; max-width: 280px; }
+.footer-col h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--emerald-400); margin-bottom: 1rem; }
+.footer-col a { display: block; font-size: 0.875rem; color: var(--emerald-300); margin-bottom: 0.5rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--white); }
+.footer-contact { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--emerald-300); margin-bottom: 0.75rem; }
+.footer-bottom { padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
+.footer-bottom p { font-size: 0.75rem; color: var(--emerald-400); }
+
+/* ---------- CONTACT MODAL ---------- */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 300; display: none; align-items: center; justify-content: center; padding: 1rem; }
+.modal-overlay.open { display: flex; }
+.modal { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; width: 100%; max-width: 420px; box-shadow: var(--shadow-xl); animation: modalIn 0.2s ease; }
+@keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.modal-header { background: var(--emerald-700); color: var(--white); padding: 1.5rem; text-align: center; }
+.modal-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; }
+.modal-header h2 { font-size: 1.25rem; font-weight: 700; }
+.modal-header p { font-size: 0.875rem; opacity: 0.9; }
+.modal-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 0.875rem; background: #25D366; color: var(--white); border-radius: var(--radius); font-size: 1rem; font-weight: 600; transition: opacity 0.2s; border: none; cursor: pointer; }
+.btn-whatsapp:hover { opacity: 0.9; }
+.btn-phone, .btn-email { display: flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 0.875rem; background: var(--white); color: var(--gray-700); border: 1px solid var(--gray-300); border-radius: var(--radius); font-size: 1rem; font-weight: 600; transition: all 0.2s; cursor: pointer; }
+.btn-phone:hover, .btn-email:hover { background: var(--gray-50); }
+.modal-location { display: flex; align-items: center; justify-content: center; gap: 0.375rem; font-size: 0.8125rem; color: var(--gray-500); padding-top: 0.75rem; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 640px) {
+    .search-grid { grid-template-columns: 1fr 1fr; }
+    .filter-grid { grid-template-columns: 1fr 1fr; }
+    .property-grid { grid-template-columns: repeat(2, 1fr); }
+    .detail-features-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (min-width: 768px) {
+    .search-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .detail-gallery { grid-template-columns: 2fr 1fr; }
+    .detail-thumbnails { display: none; }
+    .detail-gallery-desktop-thumbs { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(80px, 1fr); gap: 0.75rem; overflow-y: auto; max-height: 100%; align-content: start; }
+    .detail-gallery-desktop-thumbs .detail-thumb { width: 100%; height: 100%; min-height: 80px; }
+    .detail-gallery-desktop-thumbs::-webkit-scrollbar { width: 8px; }
+    .detail-gallery-desktop-thumbs::-webkit-scrollbar-track { background: #dcdcdc; border-radius: 999px; }
+    .detail-gallery-desktop-thumbs::-webkit-scrollbar-thumb { background: #8f8f8f; border-radius: 999px; }
+    .detail-gallery-desktop-thumbs::-webkit-scrollbar-thumb:hover { background: #6b6b6b; }
+    .detail-content { grid-template-columns: 2fr 1fr; }
+    .story-grid { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-buttons { flex-direction: row; }
+}
+@media (min-width: 1024px) {
+    .values-grid { grid-template-columns: repeat(4, 1fr); }
+    .property-grid { grid-template-columns: repeat(3, 1fr); }
+    .hamburger { display: none; }
+    .nav-links, .nav-actions { display: flex; }
+}
+@media (max-width: 768px) {
+    .nav-links, .nav-actions { display: none; }
+    .hamburger { display: flex; }
+    .search-bar-row { flex-wrap: wrap; }
+    .search-bar-row .btn-outline, .search-bar-row .btn-primary { flex: 1; }
+    .detail-content { grid-template-columns: 1fr; }
+    .story-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 1.5rem; }
+    .stat-divider { display: none; }
+    .about-badge { font-size: 0.8125rem; }
+}
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="#" class="logo" onclick="navigateTo('home')">
+                <div class="logo-icon">U</div>
+                <span class="logo-text">UNIT<span class="logo-accent">K</span></span>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" data-page="home" onclick="navigateTo('home')" data-i18n="navHome">Home</a>
+                <a href="#" class="nav-link" data-page="search" onclick="navigateTo('search')" data-i18n="navProperties">Properties</a>
+                <a href="#" class="nav-link" data-page="about" onclick="navigateTo('about')" data-i18n="navAbout">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-lang" onclick="toggleLanguage()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span id="langBtnTextDesktop">عربي</span>
+                </button>
+                <button class="contact-btn" onclick="openContactModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span data-i18n="navContact">Contact Us</span>
+                </button>
+            </div>
+
+            <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#" class="mobile-link" onclick="navigateTo('home'); closeMobileMenu();" data-i18n="navHome">Home</a>
+            <a href="#" class="mobile-link" onclick="navigateTo('search'); closeMobileMenu();" data-i18n="navProperties">Properties</a>
+            <a href="#" class="mobile-link" onclick="navigateTo('about'); closeMobileMenu();" data-i18n="navAbout">About</a>
+            <div class="mobile-divider"></div>
+            <a href="#" class="mobile-link" onclick="toggleLanguage(); closeMobileMenu();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span id="langBtnTextMobile">اللغة العربية</span>
+            </a>
+            <a href="#" class="mobile-link mobile-link-highlight" onclick="openContactModal(); closeMobileMenu();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span data-i18n="navContact">Contact Us</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ============ HOME PAGE ============ -->
+        <section class="page page-home" id="page-home">
+            <div class="hero">
+                <div class="hero-bg">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&h=1080&fit=crop" alt="Hero Background">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container hero-content">
+                    <div class="hero-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        <span data-i18n="heroBadge">Trusted Resale Property Partner</span>
+                    </div>
+                    <h1 class="hero-title" data-i18n="heroTitle">Find Your <span class="text-emerald">Dream</span> Property</h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">Discover premium resale properties across Egypt. From luxury apartments to beachfront villas, your perfect home awaits.</p>
+
+                    <!-- Search Box -->
+                    <div class="hero-search">
+                        <div class="search-grid">
+                            <div class="search-field">
+                                <svg class="search-field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <input type="text" id="heroSearchLocation" data-i18n-placeholder="searchLocation" placeholder="Search location...">
+                            </div>
+                            <div class="search-field">
+                                <select id="heroSearchType">
+                                    <option value="" data-i18n="optPropType">Property Type</option>
+                                    <option value="Apartment" data-i18n="optApartment">Apartment</option>
+                                    <option value="Villa" data-i18n="optVilla">Villa</option>
+                                    <option value="Penthouse" data-i18n="optPenthouse">Penthouse</option>
+                                    <option value="Studio" data-i18n="optStudio">Studio</option>
+                                    <option value="Duplex" data-i18n="optDuplex">Duplex</option>
+                                    <option value="Commercial" data-i18n="optCommercial">Commercial</option>
+                                    <option value="Chalet" data-i18n="optChalet">Chalet</option>
+                                    <option value="Land" data-i18n="optLand">Land</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <select id="heroSearchCity">
+                                    <option value="" data-i18n="optCity">City</option>
+                                    <option value="Cairo" data-i18n="optCairo">Cairo</option>
+                                    <option value="New Cairo" data-i18n="optNewCairo">New Cairo</option>
+                                    <option value="Giza" data-i18n="optGiza">Giza</option>
+                                    <option value="6th October City" data-i18n="optOctober">6th October City</option>
+                                    <option value="North Coast" data-i18n="optNorthCoast">North Coast</option>
+                                    <option value="New Administrative Capital" data-i18n="optNewCapital">New Administrative Capital</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <select id="heroSearchPrice">
+                                    <option value="" data-i18n="optPriceRange">Price Range</option>
+                                    <option value="0-2000000" data-i18n="optPrice1">Up to 2M</option>
+                                    <option value="2000000-5000000" data-i18n="optPrice2">2M - 5M</option>
+                                    <option value="5000000-10000000" data-i18n="optPrice3">5M - 10M</option>
+                                    <option value="10000000-999999999" data-i18n="optPrice4">10M+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="heroSearch()" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <span data-i18n="btnSearch">Search Properties</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label" data-i18n="statProperties">Properties Available</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label" data-i18n="statCities">Cities Covered</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label" data-i18n="statClients">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="featuredSection">
+                <div class="container">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title" data-i18n="featuredTitle">Featured Properties</h2>
+                            <p class="section-subtitle" data-i18n="featuredSub">Handpicked premium properties available for immediate purchase</p>
+                        </div>
+                        <button class="btn btn-outline" onclick="navigateTo('search')">
+                            <span data-i18n="btnViewAll">View All</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                    </div>
+                    <div class="property-grid" id="featuredGrid"></div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="container cta-content">
+                    <div class="cta-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        <span data-i18n="ctaBadge">Start Your Property Journey</span>
+                    </div>
+                    <h2 class="cta-title" data-i18n="ctaTitle">Ready to Find Your Perfect Property?</h2>
+                    <p class="cta-text" data-i18n="ctaSub">Whether you're looking for a luxury apartment, a family villa, or a smart investment, UNITK has the perfect property waiting for you.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-white" onclick="navigateTo('search')">
+                            <span data-i18n="btnBrowse">Browse Properties</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                        <button class="btn btn-outline-light" onclick="openContactModal()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span data-i18n="navContact">Contact Us</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SEARCH PAGE ============ -->
+        <section class="page page-search" id="page-search" style="display:none;">
+            <div class="container page-padding">
+                <div class="breadcrumb">
+                    <a href="#" onclick="navigateTo('home')" data-i18n="navHome">Home</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="breadcrumb-current" data-i18n="navProperties">Properties</span>
+                </div>
+
+                <h1 class="page-title" data-i18n="searchTitle">Browse Properties</h1>
+                <p class="page-desc" data-i18n="searchDesc">Explore our curated selection of premium resale properties</p>
+
+                <div class="search-page-controls">
+                    <div class="search-bar-row">
+                        <div class="search-bar-input">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="searchInput" data-i18n-placeholder="searchMain" placeholder="Search by title, location, city..." oninput="filterProperties()">
+                        </div>
+                        <button class="btn btn-outline" id="filterToggleBtn" onclick="toggleFilters()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                            <span data-i18n="btnFilters">Filters</span>
+                            <span class="filter-count" id="filterCount" style="display:none;">0</span>
+                        </button>
+                        <button class="btn btn-primary" onclick="filterProperties()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <span data-i18n="btnSearch">Search</span>
+                        </button>
+                    </div>
+
+                    <div class="filter-panel" id="filterPanel" style="display:none;">
+                        <div class="filter-header">
+                            <h3 data-i18n="filterTitle">Filter Properties</h3>
+                            <button class="btn-link" onclick="clearFilters()" data-i18n="btnClearAll">Clear All</button>
+                        </div>
+                        <div class="filter-grid">
+                            <div class="filter-group">
+                                <label data-i18n="lblPropType">Property Type</label>
+                                <select id="filterType" onchange="filterProperties()">
+                                    <option value="" data-i18n="optAllTypes">All Types</option>
+                                    <option value="Apartment" data-i18n="optApartment">Apartment</option>
+                                    <option value="Villa" data-i18n="optVilla">Villa</option>
+                                    <option value="Penthouse" data-i18n="optPenthouse">Penthouse</option>
+                                    <option value="Studio" data-i18n="optStudio">Studio</option>
+                                    <option value="Duplex" data-i18n="optDuplex">Duplex</option>
+                                    <option value="Commercial" data-i18n="optCommercial">Commercial</option>
+                                    <option value="Chalet" data-i18n="optChalet">Chalet</option>
+                                    <option value="Land" data-i18n="optLand">Land</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label data-i18n="lblCity">City</label>
+                                <select id="filterCity" onchange="filterProperties()">
+                                    <option value="" data-i18n="optAllCities">All Cities</option>
+                                    <option value="Cairo" data-i18n="optCairo">Cairo</option>
+                                    <option value="New Cairo" data-i18n="optNewCairo">New Cairo</option>
+                                    <option value="Giza" data-i18n="optGiza">Giza</option>
+                                    <option value="6th October City" data-i18n="optOctober">6th October City</option>
+                                    <option value="North Coast" data-i18n="optNorthCoast">North Coast</option>
+                                    <option value="New Administrative Capital" data-i18n="optNewCapital">New Administrative Capital</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label data-i18n="lblBeds">Bedrooms</label>
+                                <select id="filterBedrooms" onchange="filterProperties()">
+                                    <option value="" data-i18n="optAny">Any</option>
+                                    <option value="1">1+</option>
+                                    <option value="2">2+</option>
+                                    <option value="3">3+</option>
+                                    <option value="4">4+</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label data-i18n="lblMinPrice">Min Price (EGP)</label>
+                                <input type="number" id="filterMinPrice" placeholder="e.g. 1000000" oninput="filterProperties()">
+                            </div>
+                            <div class="filter-group">
+                                <label data-i18n="lblMaxPrice">Max Price (EGP)</label>
+                                <input type="number" id="filterMaxPrice" placeholder="e.g. 5000000" oninput="filterProperties()">
+                            </div>
+                            <div class="filter-group">
+                                <label data-i18n="lblMinArea">Min Area (sqm)</label>
+                                <input type="number" id="filterMinArea" placeholder="e.g. 100" oninput="filterProperties()">
+                            </div>
+                        </div>
+                        <div class="filter-tags" id="filterTags" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <p class="results-count" id="resultsCount">Showing <strong>0</strong> properties</p>
+                <div class="property-grid" id="searchGrid"></div>
+
+                <div class="no-results" id="noResults" style="display:none;">
+                    <div class="no-results-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    </div>
+                    <h3 data-i18n="noResultsTitle">No Properties Found</h3>
+                    <p data-i18n="noResultsDesc">No properties match your current filters. Try adjusting your search criteria.</p>
+                    <button class="btn btn-outline" onclick="clearFilters(); navigateTo('home');" data-i18n="btnBackHome">Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROPERTY DETAIL PAGE ============ -->
+        <section class="page page-detail" id="page-detail" style="display:none;">
+            <div class="container page-padding" id="detailContent">
+                <!-- Filled by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ============ ABOUT PAGE ============ -->
+        <section class="page page-about" id="page-about" style="display:none;">
+            <div class="container page-padding">
+                <div class="about-hero">
+                    <div class="about-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        <span data-i18n="aboutBadge">About UNITK</span>
+                    </div>
+                    <h1 class="about-title" data-i18n="aboutTitle">Your Trusted Partner in <span class="text-emerald">Premium Resale Properties</span></h1>
+                    <p class="about-subtitle" data-i18n="aboutSubtitle">At UNITK, we specialize in connecting buyers with exceptional resale properties across Egypt. Our mission is to make finding your dream home a seamless and enjoyable experience.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-header-center">
+                        <h2 class="section-title" data-i18n="whyTitle">Why Choose UNITK?</h2>
+                        <p class="section-subtitle" data-i18n="whySub">We're committed to excellence in every aspect of our service.</p>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                            <h3 data-i18n="val1Title">Trusted & Verified</h3>
+                            <p data-i18n="val1Desc">Every property listed on UNITK is thoroughly verified to ensure authenticity and legal compliance.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
+                            <h3 data-i18n="val2Title">Premium Selection</h3>
+                            <p data-i18n="val2Desc">We handpick only the finest properties, ensuring each listing meets our high quality standards.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            <h3 data-i18n="val3Title">Personal Service</h3>
+                            <p data-i18n="val3Desc">Our dedicated team provides personalized guidance throughout your property journey.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <h3 data-i18n="val4Title">Fast & Efficient</h3>
+                            <p data-i18n="val4Desc">We value your time. Our streamlined process ensures quick and smooth transactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="story-grid">
+                        <div class="story-content">
+                            <h2 data-i18n="storyTitle">Our Story</h2>
+                            <p data-i18n="storyP1">UNITK was founded with a simple yet powerful vision: to transform the resale property market by creating a platform that prioritizes trust, transparency, and quality. Our founders recognized that finding the right property can be a daunting process, often filled with uncertainty and complexity.</p>
+                            <p data-i18n="storyP2">That's why we built UNITK to be more than just a property listing platform. We serve as your trusted advisor, carefully curating each property in our portfolio and providing the support you need at every step of your property journey.</p>
+                        </div>
+                        <div class="story-image">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop" alt="UNITK Properties">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-cta">
+                    <h2 data-i18n="aboutCtaTitle">Ready to Find Your Dream Property?</h2>
+                    <p data-i18n="aboutCtaSub">Get in touch with our team today and let us help you discover the perfect property.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="openContactModal()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span data-i18n="navContact">Contact Us</span>
+                        </button>
+                        <button class="btn btn-outline" onclick="navigateTo('search')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span data-i18n="btnBrowse">Browse Properties</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">U</div>
+                        <span class="logo-text">UNIT<span class="logo-accent">K</span></span>
+                    </div>
+                    <p class="footer-about" data-i18n="footerAbout">Your trusted partner for premium resale properties. We connect buyers with their ideal homes and investment opportunities.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footerLinks">Quick Links</h4>
+                    <a href="#" onclick="navigateTo('home')" data-i18n="navHome">Home</a>
+                    <a href="#" onclick="navigateTo('search')" data-i18n="navProperties">Properties</a>
+                    <a href="#" onclick="navigateTo('about')" data-i18n="navAbout">About Us</a>
+                    <a href="#" onclick="openContactModal()" data-i18n="navContact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footerContact">Get In Touch</h4>
+                    <div class="footer-contact">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+201066247310</span>
+                    </div>
+                    <div class="footer-contact">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="https://www.instagram.com/unitkresale?igsh=MXUwbnBpOXhkbHJyMA%3D%3D&utm_source=qr" target="_blank" style="word-break: break-all;">@unitkresale</a>
+                    </div>
+                    <div class="footer-contact">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span data-i18n="locationText">Cairo, Egypt</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> UNITK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== CONTACT MODAL ===== -->
+    <div class="modal-overlay" id="contactModal" onclick="closeContactModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <h2 data-i18n="modalTitle">Contact UNITK</h2>
+                <p data-i18n="modalSub">Get in touch with us directly</p>
+            </div>
+            <div class="modal-body">
+                <a href="https://wa.me/201066247310" target="_blank" class="btn-whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+                
+                <a href="https://www.instagram.com/unitkresale?igsh=MXUwbnBpOXhkbHJyMA%3D%3D&utm_source=qr" 
+                   target="_blank" rel="noopener noreferrer" 
+                   style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px 24px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 12px; color: #ffffff; font-size: 16px; font-weight: 600; text-decoration: none; box-sizing: border-box; margin-top: 15px; border: none; font-family: inherit;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Instagram
+                </a>
+                <div class="modal-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span data-i18n="locationText">Cairo, Egypt</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+/* ========================================
+   UNITK - Premium Resale Properties
+   Complete JavaScript with i18n
+   ======================================== */
+
+// ===== TRANSLATIONS DICTIONARY =====
+const translations = {
+    en: {
+        navHome: "Home", navProperties: "Properties", navAbout: "About", navContact: "Contact Us",
+        heroBadge: "Trusted Resale Property Partner", heroTitle: "Find Your <span class='text-emerald'>Dream</span> Property",
+        heroSubtitle: "Discover premium resale properties across Egypt. From luxury apartments to beachfront villas, your perfect home awaits.",
+        searchLocation: "Search location...", optPropType: "Property Type", optApartment: "Apartment", optVilla: "Villa", optPenthouse: "Penthouse",
+        optStudio: "Studio", optDuplex: "Duplex", optCommercial: "Commercial", optChalet: "Chalet", optLand: "Land",
+        optCity: "City", optCairo: "Cairo", optNewCairo: "New Cairo", optGiza: "Giza", optOctober: "6th October City", optNorthCoast: "North Coast", optNewCapital: "New Administrative Capital",
+        optPriceRange: "Price Range", optPrice1: "Up to 2M", optPrice2: "2M - 5M", optPrice3: "5M - 10M", optPrice4: "10M+", btnSearch: "Search",
+        statProperties: "Properties Available", statCities: "Cities Covered", statClients: "Happy Clients",
+        featuredTitle: "Featured Properties", featuredSub: "Handpicked premium properties available for immediate purchase", btnViewAll: "View All",
+        ctaBadge: "Start Your Property Journey", ctaTitle: "Ready to Find Your Perfect Property?", ctaSub: "Whether you're looking for a luxury apartment, a family villa, or a smart investment, UNITK has the perfect property waiting for you.", btnBrowse: "Browse Properties",
+        searchTitle: "Browse Properties", searchDesc: "Explore our curated selection of premium resale properties", searchMain: "Search by title, location, city...", btnFilters: "Filters",
+        filterTitle: "Filter Properties", btnClearAll: "Clear All", lblPropType: "Property Type", optAllTypes: "All Types", lblCity: "City", optAllCities: "All Cities",
+        lblBeds: "Bedrooms", optAny: "Any", lblMinPrice: "Min Price (EGP)", lblMaxPrice: "Max Price (EGP)", lblMinArea: "Min Area (sqm)",
+        noResultsTitle: "No Properties Found", noResultsDesc: "No properties match your current filters. Try adjusting your search criteria.", btnBackHome: "Back to Home",
+        aboutBadge: "About UNITK", aboutTitle: "Your Trusted Partner in <span class='text-emerald'>Premium Resale Properties</span>", aboutSubtitle: "At UNITK, we specialize in connecting buyers with exceptional resale properties across Egypt. Our mission is to make finding your dream home a seamless and enjoyable experience.",
+        whyTitle: "Why Choose UNITK?", whySub: "We're committed to excellence in every aspect of our service.",
+        val1Title: "Trusted & Verified", val1Desc: "Every property listed on UNITK is thoroughly verified to ensure authenticity and legal compliance.",
+        val2Title: "Premium Selection", val2Desc: "We handpick only the finest properties, ensuring each listing meets our high quality standards.",
+        val3Title: "Personal Service", val3Desc: "Our dedicated team provides personalized guidance throughout your property journey.",
+        val4Title: "Fast & Efficient", val4Desc: "We value your time. Our streamlined process ensures quick and smooth transactions.",
+        storyTitle: "Our Story", storyP1: "UNITK was founded with a simple yet powerful vision: to transform the resale property market by creating a platform that prioritizes trust, transparency, and quality. Our founders recognized that finding the right property can be a daunting process, often filled with uncertainty and complexity.", storyP2: "That's why we built UNITK to be more than just a property listing platform. We serve as your trusted advisor, carefully curating each property in our portfolio and providing the support you need at every step of your property journey.",
+        aboutCtaTitle: "Ready to Find Your Dream Property?", aboutCtaSub: "Get in touch with our team today and let us help you discover the perfect property.",
+        footerAbout: "Your trusted partner for premium resale properties. We connect buyers with their ideal homes and investment opportunities.", footerLinks: "Quick Links", footerContact: "Get In Touch", locationText: "Cairo, Egypt",
+        modalTitle: "Contact UNITK", modalSub: "Get in touch with us directly",
+        lblDetails: "Property Details", lblDesc: "Description", lblBack: "Back", lblArea: "Area", lblFloor: "Floor", lblPrice: "Price", lblReqView: "Request a Viewing", lblAgent: "Interested in this property?", lblAgentSub: "Contact us for more details or to schedule a viewing.",
+        currencySuffix: " EGP"
+    },
+    ar: {
+        navHome: "الرئيسية", navProperties: "العقارات", navAbout: "عن الشركة", navContact: "اتصل بنا",
+        heroBadge: "شريكك الموثوق للعقارات", heroTitle: "ابحث عن عقار <span class='text-emerald'>أحلامك</span>",
+        heroSubtitle: "اكتشف أفضل العقارات المعاد بيعها في مصر. من الشقق الفاخرة إلى الفيلات الساحلية، بيت أحلامك في انتظارك.",
+        searchLocation: "ابحث عن الموقع...", optPropType: "نوع العقار", optApartment: "شقة", optVilla: "فيلا", optPenthouse: "بنتهاوس",
+        optStudio: "استوديو", optDuplex: "دوبلكس", optCommercial: "تجاري", optChalet: "شاليه", optLand: "أرض",
+        optCity: "المدينة", optCairo: "القاهرة", optNewCairo: "القاهرة الجديدة", optGiza: "الجيزة", optOctober: "السادس من أكتوبر", optNorthCoast: "الساحل الشمالي", optNewCapital: "العاصمة الإدارية الجديدة",
+        optPriceRange: "نطاق السعر", optPrice1: "حتى ٢ مليون", optPrice2: "٢ مليون - ٥ مليون", optPrice3: "٥ مليون - ١٠ مليون", optPrice4: "+١٠ مليون", btnSearch: "بحث",
+        statProperties: "عقار متاح", statCities: "مدن مغطاة", statClients: "عملاء سعداء",
+        featuredTitle: "عقارات مميزة", featuredSub: "عقارات فاخرة منتقاة بعناية متاحة للشراء الفوري", btnViewAll: "عرض الكل",
+        ctaBadge: "ابدأ رحلتك العقارية", ctaTitle: "جاهز للعثور على عقارك المثالي؟", ctaSub: "سواء كنت تبحث عن شقة فاخرة، فيلا عائلية، أو استثمار ذكي، لدينا العقار المثالي لك.", btnBrowse: "تصفح العقارات",
+        searchTitle: "تصفح العقارات", searchDesc: "اكتشف مجموعتنا المختارة من العقارات الفاخرة", searchMain: "ابحث بالاسم، الموقع، المدينة...", btnFilters: "تصفية",
+        filterTitle: "تصفية العقارات", btnClearAll: "مسح الكل", lblPropType: "نوع العقار", optAllTypes: "كل الأنواع", lblCity: "المدينة", optAllCities: "كل المدن",
+        lblBeds: "غرف النوم", optAny: "أي عدد", lblMinPrice: "الحد الأدنى للسعر (جنيه)", lblMaxPrice: "الحد الأقصى للسعر (جنيه)", lblMinArea: "المساحة (متر مربع)",
+        noResultsTitle: "لم يتم العثور على عقارات", noResultsDesc: "لا توجد عقارات تطابق بحثك. حاول تغيير الفلاتر.", btnBackHome: "العودة للرئيسية",
+        aboutBadge: "عن UNITK", aboutTitle: "شريكك الموثوق في <span class='text-emerald'>العقارات المتميزة</span>", aboutSubtitle: "نحن متخصصون في ربط المشترين بعقارات استثنائية في جميع أنحاء مصر. مهمتنا هي جعل العثور على منزل أحلامك تجربة سلسة.",
+        whyTitle: "لماذا تختارنا؟", whySub: "نحن ملتزمون بالتميز في كل جانب من جوانب خدمتنا.",
+        val1Title: "موثوق وموثق", val1Desc: "يتم التحقق من كل عقار مدرج بدقة لضمان الموثوقية والامتثال القانوني.",
+        val2Title: "اختيار فاخر", val2Desc: "نحن نختار فقط أفضل العقارات، لضمان تلبية معايير الجودة العالية لدينا.",
+        val3Title: "خدمة شخصية", val3Desc: "يقدم فريقنا المتخصص إرشادات شخصية طوال رحلتك العقارية.",
+        val4Title: "سريع وفعال", val4Desc: "نحن نقدر وقتك. تضمن عمليتنا المبسطة معاملات سريعة وسلسة.",
+        storyTitle: "قصتنا", storyP1: "تأسست الشركة برؤية بسيطة ولكن قوية: تحويل سوق العقارات من خلال إنشاء منصة تعطي الأولوية للثقة والشفافية والجودة.", storyP2: "لهذا السبب بنينا منصتنا لتكون أكثر من مجرد موقع قوائم. نحن نعمل كمستشارك الموثوق به، وندعمك في كل خطوة.",
+        aboutCtaTitle: "جاهز للعثور على عقار أحلامك؟", aboutCtaSub: "تواصل مع فريقنا اليوم ودعنا نساعدك في اكتشاف العقار المثالي.",
+        footerAbout: "شريكك الموثوق للعقارات الفاخرة. نربط المشترين بمنازلهم المثالية وفرص الاستثمار.", footerLinks: "روابط سريعة", footerContact: "تواصل معنا", locationText: "القاهرة، مصر",
+        modalTitle: "تواصل معنا", modalSub: "تواصل معنا مباشرة عبر القنوات التالية",
+        lblDetails: "تفاصيل العقار", lblDesc: "الوصف", lblBack: "رجوع", lblArea: "المساحة", lblFloor: "الطابق", lblPrice: "السعر", lblReqView: "طلب معاينة", lblAgent: "مهتم بهذا العقار؟", lblAgentSub: "تواصل معنا لمزيد من التفاصيل أو لتحديد موعد للمعاينة.",
+        currencySuffix: " ج.م"
+    }
+};
+
+let currentLang = 'en';
+
+// ===== PROPERTY DATA =====
+const properties = [
+    {
+        id: "1", 
+        type: "Commercial", 
+        price: 70000, 
+        area: 250, 
+        bedrooms: 0, 
+        bathrooms: 1,
+        
+        title_en: "Ultra Super Lux Administrative Office", 
+        location_en: "Panoramic View", 
+        city_en: "Cairo", 
+        floor_en: "6th Floor",
+        
+        title_ar: "مكتب إداري تشطيب ألترا سوبر لوكس", 
+        location_ar: "فيو بانوراما", 
+        city_ar: "القاهرة", 
+        floor_ar: "الدور السادس",
+        
+        description_en: "Premium 250 sqm administrative office located on the 6th floor. Features ultra super lux finishing, breathtaking panoramic views, and full administrative reconciliation. Perfect for corporate setups.",
+        description_ar: "مكتب إداري فاخر بمساحة ٢٥٠ متر مربع يقع في الدور السادس. يتميز بتشطيب ألترا سوبر لوكس، إطلالات بانورامية خلابة، وتصالح إداري كامل. مثالي للشركات والمكاتب الإدارية الكبرى.",
+        
+        images: [
+            "https://cdn.phototourl.com/free/2026-07-29-c2da0d58-d40d-469f-ae48-31831f0cd0f4.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-05bb1d49-5346-46de-b69e-238a98a1c0ad.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-ddeea077-eef8-418a-aaae-046516572e1f.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-f982b467-68f3-4ebd-96aa-81e492508967.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-807d45d0-a03d-48db-b68b-f53a4aa67bfe.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-4e703a9f-8abb-48fe-8314-0d5e0582eb97.jpg",
+            "https://cdn.phototourl.com/free/2026-07-29-8e34f52b-c56e-4764-a87c-b651c3f55ae3.jpg"
+        ]
+    },
+    {
+        id: "2",
+        type: "Villa",
+        price: 70000000,
+        area: 900,
+        bedrooms: 5,
+        bathrooms: 5,
+
+        title_en: "Standalone Villa in Le Reve, Fifth Settlement – Direct View of Katameya Dunes",
+        location_en: "Le Reve Compound, Directly Facing Katameya Dunes",
+        city_en: "New Cairo",
+        floor_en: "Basement + Ground + First Floor + Partial Roof",
+
+        title_ar: "فيلا مستقلة للبيع في لي ريف، التجمع الخامس - مباشرة أمام كاتاميا دونز",
+        location_ar: "كمبوند لي ريف، أمام كاتاميا دونز مباشرة",
+        city_ar: "التجمع الخامس",
+        floor_ar: "بيسمنت + أرضي + أول + جزء من الروف",
+
+        description_en: "Standalone villa for sale in Le Reve Compound, Fifth Settlement, directly facing Katameya Dunes. Land area 1,200 sqm, with total built-up area of approximately 900 sqm, including a full basement spanning the entire plot, a ground floor, a first floor, and part of the roof finished to a semi-finished (half-finish) standard. The remaining roof area offers the option to be completed, adding up to approximately 160 sqm at maximum. A rare opportunity for a spacious family villa in a prime, sought-after location. Price: EGP 70,000,000 cash.",
+        description_ar: "فيلا مستقلة للبيع في كمبوند لي ريف بالتجمع الخامس، أمام كاتاميا دونز مباشرة. مساحة الأرض ١٢٠٠ متر مربع، والمباني حوالي ٩٠٠ متر مربع شاملة بدروم على كامل مساحة الأرض، ودور أرضي، ودور أول، وجزء من الروف بتشطيب نصف تشطيب. مع إمكانية استكمال باقي مساحة الروف بحد أقصى حوالي ١٦٠ متر. فرصة مميزة لفيلا عائلية واسعة في موقع مميز ومطلوب. السعر ٧٠ مليون جنيه كاش.",
+
+        images: [
+            "https://cdn.phototourl.com/member/2026-08-28-d2632d83-0546-4455-805a-e6d61d5eda03.jpg",
+            "https://cdn.phototourl.com/free/2026-08-28-9da48e93-9eb3-457b-a823-5b409f3d6faf.jpg",
+            "https://cdn.phototourl.com/free/2026-08-28-10ef7f6a-6d67-495c-a8dd-1767c6fe70ff.jpg",
+            "https://cdn.phototourl.com/free/2026-08-28-3073ad44-56e4-4d71-bf4c-720bfc61914b.jpg",
+            "https://cdn.phototourl.com/free/2026-08-28-e0607303-1f9e-4221-b185-4d140d41056c.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-ae599658-fa75-4a96-9596-9bd6ec86cbad.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-477b044b-4405-4d64-aaeb-f6b886284b62.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-c7954252-6e22-486e-a5cc-d4e554782752.jpg"
+        ]
+    },
+    {
+        id: "3",
+        type: "Commercial",
+        price: 7500000,
+        area: 152,
+        bedrooms: 0,
+        bathrooms: 1,
+
+        title_en: "Administrative Unit in Al Murshidi, Facing Wadi Degla – Pool View",
+        location_en: "Al Murshidi, Street 200, Degla – Facing Wadi Degla",
+        city_en: "Cairo",
+        floor_en: "7th Floor",
+
+        title_ar: "دور إداري في المرشدي، أمام وادي دجلة - على حمام السباحة",
+        location_ar: "المرشدي، شارع ٢٠٠، دجلة - أمام وادي دجلة",
+        city_ar: "القاهرة",
+        floor_ar: "الدور السابع",
+
+        description_en: "Administrative unit for sale in Al Murshidi, Street 200, Degla, directly facing Wadi Degla. Area 152 sqm, located on the 7th floor overlooking the swimming pool. Price EGP 7,500,000 cash, or EGP 5,500,000 through the developer (Al Murshidi) over 9 installments.",
+        description_ar: "دور إداري للبيع في المرشدي، شارع ٢٠٠، دجلة، أمام وادي دجلة مباشرة. المساحة ١٥٢ متر مربع، في الدور السابع على حمام السباحة. السعر ٧٫٥ مليون جنيه كاش، أو ٥٫٥ مليون جنيه من خلال الشركة المالكة (المرشدي) على ٩ أقساط.",
+
+        images: [
+            "https://cdn.phototourl.com/member/2026-08-28-252cbd7d-a9a6-43f7-a5d0-cdeb4debc000.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-b8d41d9a-cba6-42e8-8725-fc6d409d0168.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-8179a0ca-46ea-4909-b2bb-73afffdc0560.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-868fb55a-7799-49fa-9cb9-692ad53d925d.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-684e9dd8-8bc6-49cb-8c89-7ea14e3f37da.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-87f76045-05df-4327-a8ca-0556c1d9d44e.jpg"
+        ]
+    },
+    {
+        id: "4",
+        type: "Commercial",
+        price: 700000,
+        area: 0,
+        bedrooms: 0,
+        bathrooms: 0,
+
+        title_en: "Building for Rent – Ground + 4 Repeated Floors, Roof & Garage, Street 200, Degla",
+        location_en: "Street 200, Degla, Maadi",
+        city_en: "Cairo",
+        floor_en: "Ground + 4 Repeated Floors + Roof",
+
+        title_ar: "مبنى للإيجار - أرضي و٤ أدوار متكررة وروف وجراج، شارع ٢٠٠، دجلة",
+        location_ar: "شارع ٢٠٠، دجلة، المعادي",
+        city_ar: "القاهرة",
+        floor_ar: "أرضي + ٤ أدوار متكررة + روف",
+
+        description_en: "Building for rent on Street 200, Degla, Maadi. Consists of a ground floor plus 4 repeated typical floors, in addition to a roof and a private garage. Monthly rent: EGP 700,000. [Built-up area to be confirmed.]",
+        description_ar: "مبنى للإيجار في شارع ٢٠٠، دجلة، المعادي. يتكون من دور أرضي وأربعة أدوار متكررة، بالإضافة إلى روف وجراج خاص. الإيجار الشهري ٧٠٠,٠٠٠ جنيه. [المساحة سيتم تحديدها لاحقاً.]",
+
+        images: [
+            "https://cdn.phototourl.com/member/2026-08-28-2798c950-33b6-4392-b90a-a00a1d320075.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-fc5e3d72-93db-4504-9d66-a1301f1800ec.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-fa74fa2b-4a78-4f72-b5f8-c4993f4b1651.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-e8213aa4-03f0-4403-be9a-ee3e443b70ae.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-389ecc35-4d87-49b6-98ac-499613bf2dbf.jpg"
+        ]
+    },
+    {
+        id: "5",
+        type: "Apartment",
+        price: 4500000,
+        area: 136,
+        bedrooms: 2,
+        bathrooms: 1,
+
+        title_en: "Apartment for Sale in Zahraa El Maadi – Bank of Housing & Development Buildings, Phase 2",
+        location_en: "Second Phase, Next to Vodafone & Oscar, Zahraa El Maadi",
+        city_en: "Cairo",
+        floor_en: "2nd Floor",
+
+        title_ar: "شقة للبيع في زهراء المعادي - عمارات بنك التعمير والإسكان - الشطر الثاني",
+        location_ar: "الشطر الثاني، جنب فودافون وأوسكار، زهراء المعادي",
+        city_ar: "القاهرة",
+        floor_ar: "الدور الثاني",
+
+        description_en: "Apartment for sale in Zahraa El Maadi, Bank of Housing and Development buildings, second phase, next to Vodafone and Oscar. Located on the 2nd floor, net area 136 sqm. Features a large reception (3 pieces), 2 bedrooms, 1 bathroom, a large kitchen, and 2 balconies — one of which is a large terrace balcony on the building's facade. Includes an intercom system and a private garage parking space. Price: EGP 4,500,000.",
+        description_ar: "شقة للبيع في زهراء المعادي، عمارات بنك التعمير والإسكان، الشطر الثاني، جنب فودافون وأوسكار. تقع في الدور الثاني، المساحة صافي ١٣٦ متر مربع. تحتوي على رسيبشن كبير (٣ قطع)، غرفتين نوم، حمام، مطبخ كبير، وبلكونتين إحداهما بلكونة تراس كبيرة على الواجهة. تشمل انتركام وباكيه جراج خاص. السعر ٤٫٥ مليون جنيه.",
+
+        images: [
+            "https://cdn.phototourl.com/member/2026-08-28-5d77b1f3-8c57-4683-bba7-380add12df65.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-ba384628-ba3d-46b5-91cc-70b08d081f56.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-eed80d4e-28f4-4661-a3da-fc29e355eec9.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-d07e943a-e500-410f-a537-a596df30d876.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-46ab943f-227a-45a5-96ad-650c640faaac.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-a1949f07-b3c3-4b7c-8fe5-ca3d79eed145.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-f080965d-1e30-449b-9819-e337992523a0.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-27457ea8-48a6-40a2-a15f-0218c2e1eb64.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-656c8f06-8239-44f2-bbe4-2b8814fb2dd7.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-c42e0b4d-52a4-4108-bd3e-5514f440e236.jpg",
+            "https://cdn.phototourl.com/member/2026-08-28-9732b0c6-36ae-42bf-be1a-20d38afc12a7.jpg"
+        ]
+    }
+];
+
+let currentPage = "home";
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    renderFeaturedProperties();
+    window.addEventListener("scroll", handleScroll);
+});
+
+// ===== LANGUAGE TOGGLE =====
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    
+    // Set Direction
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLang;
+
+    // Change toggle button text
+    document.getElementById('langBtnTextDesktop').textContent = currentLang === 'en' ? 'عربي' : 'English';
+    document.getElementById('langBtnTextMobile').textContent = currentLang === 'en' ? 'اللغة العربية' : 'English';
+
+    // Translate all static texts
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        let key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+            el.innerHTML = translations[currentLang][key];
+        }
+    });
+
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        let key = el.getAttribute('data-i18n-placeholder');
+        if (translations[currentLang][key]) {
+            el.placeholder = translations[currentLang][key];
+        }
+    });
+
+    // Re-render properties to update text
+    renderFeaturedProperties();
+    if (currentPage === 'search') filterProperties();
+    if (currentPage === 'detail' && window.currentPropertyId) viewProperty(window.currentPropertyId);
+}
+
+// ===== FORMAT HELPERS =====
+function getTrans(propKeyBase, property) {
+    return property[propKeyBase + "_" + currentLang] || property[propKeyBase + "_en"];
+}
+function formatPrice(price) {
+    let suffix = currentLang === 'ar' ? ' مليون' : 'M';
+    let kSuffix = currentLang === 'ar' ? ' ألف' : 'K';
+    if (price >= 1000000) return (price / 1000000).toFixed(1) + suffix;
+    return (price / 1000).toFixed(0) + kSuffix;
+}
+function formatPriceFull(price) {
+    return new Intl.NumberFormat("en-US").format(price) + translations[currentLang].currencySuffix;
+}
+function getTypeTranslated(type) {
+    return translations[currentLang]['opt' + type] || type;
+}
+function getTypeBadgeClass(type) {
+    var map = { "Apartment": "badge-apartment", "Villa": "badge-villa", "Penthouse": "badge-penthouse", "Studio": "badge-studio", "Duplex": "badge-duplex", "Commercial": "badge-commercial", "Chalet": "badge-chalet", "Land": "badge-land" };
+    return map[type] || "badge-apartment";
+}
+
+// ===== NAVIGATION =====
+function navigateTo(page) {
+    event && event.preventDefault();
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    var targetPage = document.getElementById("page-" + page);
+    if (targetPage) targetPage.style.display = "block";
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("data-page") === page) link.classList.add("active");
+    });
+    currentPage = page;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (page === "search") filterProperties();
+    if (page === "home") renderFeaturedProperties();
+}
+
+function toggleMobileMenu() { document.getElementById("mobileMenu").classList.toggle("open"); }
+function closeMobileMenu() { document.getElementById("mobileMenu").classList.remove("open"); }
+function handleScroll() {
+    var navbar = document.getElementById("navbar");
+    navbar.style.boxShadow = window.scrollY > 10 ? "0 1px 3px rgba(0,0,0,0.1)" : "none";
+}
+
+// ===== PROPERTY CARDS =====
+function createPropertyCardHTML(property) {
+    var badgeClass = getTypeBadgeClass(property.type);
+    var translatedType = getTypeTranslated(property.type);
+    var featuresHTML = "";
+
+    if (property.bedrooms > 0) featuresHTML += '<div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' + property.bedrooms + '</div>';
+    if (property.bathrooms > 0) featuresHTML += '<div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1z"></path><path d="M6 12V5a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v7"></path><path d="M10 12V5a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v7"></path></svg>' + property.bathrooms + '</div>';
+    featuresHTML += '<div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>' + property.area + '</div>';
+
+    return '<div class="property-card" onclick="viewProperty(\'' + property.id + '\')">' +
+        '<div class="property-card-img">' +
+            '<img src="' + property.images[0] + '" alt="' + getTrans('title', property) + '" loading="lazy">' +
+            '<div class="property-card-img-overlay"></div>' +
+            '<span class="property-type-badge ' + badgeClass + '">' + translatedType + '</span>' +
+            '<div class="property-card-price">' + formatPrice(property.price) + '</div>' +
+        '</div>' +
+        '<div class="property-card-body">' +
+            '<div class="property-card-title">' + getTrans('title', property) + '</div>' +
+            '<div class="property-card-location">' +
+                '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>' +
+                '<span>' + getTrans('location', property) + ', ' + getTrans('city', property) + '</span>' +
+            '</div>' +
+            '<div class="property-card-features">' + featuresHTML + '</div>' +
+        '</div>' +
+    '</div>';
+}
+
+function renderFeaturedProperties() {
+    var grid = document.getElementById("featuredGrid");
+    grid.innerHTML = properties.slice(0, 6).map(createPropertyCardHTML).join("");
+}
+
+// ===== SEARCH & FILTERS =====
+function heroSearch() {
+    document.getElementById("searchInput").value = document.getElementById("heroSearchLocation").value;
+    document.getElementById("filterType").value = document.getElementById("heroSearchType").value;
+    document.getElementById("filterCity").value = document.getElementById("heroSearchCity").value;
+    
+    var price = document.getElementById("heroSearchPrice").value;
+    if (price) {
+        var parts = price.split("-");
+        document.getElementById("filterMinPrice").value = parts[0];
+        document.getElementById("filterMaxPrice").value = parts[1];
+    }
+    navigateTo("search");
+}
+
+function toggleFilters() {
+    var panel = document.getElementById("filterPanel");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function filterProperties() {
+    var query = document.getElementById("searchInput").value.toLowerCase();
+    var type = document.getElementById("filterType").value;
+    var city = document.getElementById("filterCity").value;
+    var bedrooms = document.getElementById("filterBedrooms").value;
+    var minPrice = parseFloat(document.getElementById("filterMinPrice").value) || 0;
+    var maxPrice = parseFloat(document.getElementById("filterMaxPrice").value) || Infinity;
+    var minArea = parseFloat(document.getElementById("filterMinArea").value) || 0;
+
+    var filtered = properties.filter(function (p) {
+        if (query) {
+            var searchTxt = (p.title_en + " " + p.title_ar + " " + p.location_en + " " + p.location_ar + " " + p.city_en + " " + p.city_ar).toLowerCase();
+            if (!searchTxt.includes(query)) return false;
+        }
+        if (type && p.type !== type) return false;
+        if (city && p.city_en !== city) return false; 
+        if (bedrooms && p.bedrooms < parseInt(bedrooms)) return false;
+        if (p.price < minPrice || p.price > maxPrice || p.area < minArea) return false;
+        return true;
+    });
+
+    var count = document.getElementById("resultsCount");
+    var resText = currentLang === 'ar' ? 'عرض <strong>' + filtered.length + '</strong> عقار' : 'Showing <strong>' + filtered.length + '</strong> properties';
+    count.innerHTML = resText;
+
+    var grid = document.getElementById("searchGrid");
+    var noResults = document.getElementById("noResults");
+
+    if (filtered.length === 0) {
+        grid.style.display = "none";
+        noResults.style.display = "flex";
+    } else {
+        grid.style.display = "grid";
+        noResults.style.display = "none";
+        grid.innerHTML = filtered.map(createPropertyCardHTML).join("");
+    }
+}
+
+function clearFilters() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("filterType").value = "";
+    document.getElementById("filterCity").value = "";
+    document.getElementById("filterBedrooms").value = "";
+    document.getElementById("filterMinPrice").value = "";
+    document.getElementById("filterMaxPrice").value = "";
+    document.getElementById("filterMinArea").value = "";
+    filterProperties();
+}
+
+// ===== PROPERTY DETAILS =====
+function buildDetailRow(label, value) {
+    return '<div class="detail-row"><span class="detail-row-label">' + label + '</span><span class="detail-row-value">' + value + '</span></div>';
+}
+
+function viewProperty(id) {
+    window.currentPropertyId = id;
+    var p = properties.find(x => x.id === id);
+    if (!p) return;
+
+    var t = translations[currentLang];
+    var badgeClass = getTypeBadgeClass(p.type);
+    
+    var fHTML = '<div class="feature-card"><div class="feature-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg></div><div><div class="feature-card-label">'+t.lblArea+'</div><div class="feature-card-value">' + p.area + '</div></div></div>';
+    if (p.bedrooms > 0) fHTML += '<div class="feature-card"><div class="feature-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div><div><div class="feature-card-label">'+t.lblBeds+'</div><div class="feature-card-value">' + p.bedrooms + '</div></div></div>';
+
+    var rHTML = buildDetailRow(t.optPropType, getTypeTranslated(p.type)) + buildDetailRow(t.lblPrice, formatPriceFull(p.price)) + buildDetailRow(t.lblArea, p.area) + buildDetailRow(t.optCity, getTrans('city', p)) + buildDetailRow(t.lblFloor, getTrans('floor', p));
+
+    var thumbsHTML = p.images.map((img, i) => {
+        return '<div class="detail-thumb '+(i===0?'active':'')+'" onclick="switchDetailImage(\''+id+'\', '+i+')"><img src="'+img+'"></div>';
+    }).join('');
+
+    var desktopThumbsHTML = p.images.slice(1).map((img, i) => {
+        return '<div class="detail-thumb" onclick="switchDetailImage(\''+id+'\', '+(i+1)+')"><img src="'+img+'"></div>';
+    }).join('');
+
+    document.getElementById("detailContent").innerHTML = 
+        '<button class="detail-back" onclick="navigateTo(\'search\')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>'+t.lblBack+'</button>' +
+        
+        '<div class="detail-gallery">' +
+            '<div class="detail-main-img"><img id="detailMainImg" src="' + p.images[0] + '"><div class="detail-overlay"></div><span class="property-type-badge ' + badgeClass + '">' + getTypeTranslated(p.type) + '</span><div class="detail-img-price">' + formatPriceFull(p.price) + '</div></div>' +
+            '<div class="detail-thumbnails">' + thumbsHTML + '</div>' +
+            '<div class="detail-gallery-desktop-thumbs">' + desktopThumbsHTML + '</div>' +
+        '</div>' +
+        
+        '<div class="detail-content"><div class="detail-info">' +
+            '<h1>' + getTrans('title', p) + '</h1>' +
+            '<div class="detail-location"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>' + getTrans('location', p) + ', ' + getTrans('city', p) + '</span></div>' +
+            '<div class="detail-features-grid">' + fHTML + '</div>' +
+            '<div class="detail-description"><h2>'+t.lblDesc+'</h2><p>' + getTrans('description', p) + '</p></div>' +
+            '<div><h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.75rem;">'+t.lblDetails+'</h2><div class="detail-table">' + rHTML + '</div></div>' +
+        '</div>' +
+        '<div class="detail-sidebar"><div class="detail-price-card"><div class="detail-price-label">'+t.lblPrice+'</div><div class="detail-price-value">' + formatPriceFull(p.price) + '</div><div class="detail-price-actions"><button class="btn btn-white" onclick="openContactModal()">'+t.navContact+'</button></div></div>' +
+        '<div class="detail-agent-card"><h3>'+t.lblAgent+'</h3><p>'+t.lblAgentSub+'</p><button class="btn btn-outline" style="width:100%" onclick="openContactModal()">'+t.lblReqView+'</button></div></div></div>';
+    
+    navigateTo("detail");
+}
+
+function switchDetailImage(propertyId, imageIndex) {
+    var p = properties.find(x => x.id === propertyId);
+    if (!p || !p.images[imageIndex]) return;
+    
+    var mainImg = document.getElementById("detailMainImg");
+    if (mainImg) mainImg.src = p.images[imageIndex];
+    
+    document.querySelectorAll(".detail-thumb").forEach((thumb, i) => {
+        // Simple trick to just match the source to active thumbnail
+        if (thumb.querySelector("img").src === p.images[imageIndex]) {
+            thumb.classList.add("active");
+        } else {
+            thumb.classList.remove("active");
+        }
+    });
+}
+
+function openContactModal() { if (event) event.preventDefault(); document.getElementById("contactModal").classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeContactModal(e) { if (e && e.target !== e.currentTarget) return; document.getElementById("contactModal").classList.remove("open"); document.body.style.overflow = ""; }
+</script>
+</body>
+</html>
